@@ -221,6 +221,27 @@ static int init_cpu_power_scale(void)
 core_initcall(init_cpu_power_scale);
 
 /*
+ * Update the cpu power
+ */
+
+unsigned long arch_scale_freq_power(struct sched_domain *sd, int cpu)
+{
+	return per_cpu(cpu_scale, cpu);
+}
+
+/*
+ * sched_domain flag configuration
+ */
+/* TODO add a config flag for this function */
+int arch_sd_sibling_asym_packing(void)
+{
+	if (sched_smt_power_savings || sched_mc_power_savings)
+		return SD_ASYM_PACKING;
+	return 0;
+}
+
+/*
+>>>>>>> 64ed398... ARM: cpu topology: Add asym topology flag for using cpu0 1st
  * default topology function
  */
 
