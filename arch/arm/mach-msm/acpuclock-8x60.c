@@ -62,12 +62,12 @@
 #define COMPLEX_SLEW		7
 
 /* PLL calibration limits.
- * The PLL hardware has a minimum frequency of 384MHz.
- * Calibration should respect this limit. */
+ * The PLL hardware has a minimum frequency of 384MHz to 1512MHz. The L_VALs
+ * used for calibration should respect these limits. */
 #define L_VAL_SCPLL_CAL_MIN	0x08 /* =  432 MHz with 27MHz source */
 #define L_VAL_SCPLL_CAL_MAX	0x24 /* = 1944 MHz with 27MHz source */ 
 
-#define MIN_VDD_SC      	 750000 /* uV */ 
+#define MIN_VDD_SC      	 700000 /* uV */ 
 #define MAX_VDD_SC		1350000 /* uV */
 #define MAX_VDD_MEM		1350000 /* uV */
 #define MAX_VDD_DIG		1300000 /* uV */
