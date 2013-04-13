@@ -13,11 +13,8 @@
 #include <linux/interrupt.h>
 #include <mach/msm_iomap.h>
 #include <mach/msm_bus.h>
-<<<<<<< HEAD
 #include <mach/socinfo.h>
-=======
 #include <linux/cpufreq.h>
->>>>>>> 82c34d5... Badass Governor (Support Both of 2 and 3 Phases)
 
 #include "kgsl.h"
 #include "kgsl_pwrscale.h"
