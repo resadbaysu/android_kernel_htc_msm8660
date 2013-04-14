@@ -799,7 +799,7 @@ static bool msm_pm_power_collapse(bool from_idle)
 	if ((!from_idle) && (MSM_PM_DEBUG_CLOCK & msm_pm_debug_mask))
 		pr_info("[K] CPU%u: %s: restore clock rate to %lu\n",
 			cpu, __func__, saved_acpuclk_rate);
-	if (acpuclk_set_rate(dev->cpu, saved_acpuclk_rate, SETRATE_PC) < 0)
+	if (acpuclk_set_rate(cpu, saved_acpuclk_rate, SETRATE_PC) < 0)
 		pr_err("[K] CPU%u: %s: failed to restore clock rate(%lu)\n",
 			cpu, __func__, saved_acpuclk_rate);
 
