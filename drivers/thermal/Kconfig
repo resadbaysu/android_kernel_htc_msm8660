@@ -101,3 +101,39 @@ config THERMAL_MONITOR
 	  absence of a system wide thermal monitoring entity or until such an
 	  entity starts running in the userspace. Monitors TSENS temperature
 	  and limits the max frequency of the cores.
+
+config DEF_ALLOWED_MAX_HIGH
+	int "Stage 3 Thermal Temp Limit"
+	depends on THERMAL
+	default 76
+
+config DEF_ALLOWED_MAX_FREQ
+	int "Stage 3 Thermal MaxFreq"
+	depends on THERMAL
+	default 384000
+
+
+config DEF_ALLOWED_MID_HIGH
+	int "Stage 2 Thermal Temp Limit"
+	depends on THERMAL
+	default 72
+
+config DEF_ALLOWED_MID_FREQ
+	int "Stage 2 Thermal MaxFreq"
+	depends on THERMAL
+	default 648000
+
+config DEF_ALLOWED_LOW_HIGH
+	int "Stage 1 Thermal Temp Limit"
+	depends on THERMAL
+	default 70
+
+config DEF_ALLOWED_LOW_FREQ
+	int "Stage 1 Thermal MaxFreq"
+	depends on THERMAL
+	default 972000
+
+config DEF_THERMAL_CHECK_MS
+	int "Sampling Rate for Kernal Based THERMALD Service"
+	depends on THERMAL
+	default 1000
